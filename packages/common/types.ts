@@ -6,11 +6,11 @@ export const TrainModel = z.object({
     age: z.number(),
     ethnicity: z.enum(["Black",
         "white",
-        "Asian American",
-        "East Asian",
-        "South East Asian",
-        "South Asian",
-        "Middle Eastern",
+        "Asian_American",
+        "East_Asian",
+        "South_East_Asian",
+        "South_Asian",
+        "Middle_Eastern",
         "Pacific",
         "Hispanic"
     ]),
@@ -22,7 +22,8 @@ export const TrainModel = z.object({
 export const generateImage = z.object({
     prompt: z.string(),
     modelId: z.string(),
-    num: z.number()
+    userId: z.string(),
+    imageUrl: z.string()
 })
 
 export const generateImageFromPack = z.object({
