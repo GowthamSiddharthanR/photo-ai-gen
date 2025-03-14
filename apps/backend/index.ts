@@ -40,6 +40,8 @@ app.post('/ai/training',async (req, res)=>{
     }
 })
 
+
+//Generating an Image vian user's prompt
 app.post('/ai/generate', async (req, res)=>{
     try{
         const parsedSchema = generateImage.safeParse(req.body);
@@ -64,7 +66,10 @@ app.post('/ai/generate', async (req, res)=>{
 })
 
 app.post('/pack/generate', (req,res)=>{
-    
+    const parsedSchema = generateImageFromPack.safeParse(req.body);
+    if(!parsedSchema) res.json({
+        message : "Incorrect type of Input"
+    })
 })
 
 app.listen(PORT, ()=>{
