@@ -13,9 +13,10 @@
     "start": "bun run index.ts"
   },
   "dependencies": {
+    "@fal-ai/client": "^1.2.3",
     "@types/express": "^5.0.0",
-    "express": "^4.21.2",
-    "common" : "*",
-    "db" : "*"
+    "common": "*",
+    "db": "*",
+    "express": "^4.21.2"
   }
 }

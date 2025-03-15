@@ -65,10 +65,55 @@ app.post('/ai/generate', async (req, res)=>{
     }
 })
 
-app.post('/pack/generate', (req,res)=>{
+
+
+app.post('/pack/generate',async (req,res)=>{
     const parsedSchema = generateImageFromPack.safeParse(req.body);
     if(!parsedSchema) res.json({
         message : "Incorrect type of Input"
+    })
+
+    const prompts = await prismaClient.packPrompts.findMany({
+        where : {
+            packId : parsedSchema.data?.packId
+        }
+    })
+
+    const images = await prismaClient.outputImages.createManyAndReturn({ // return id of array in prisma
+        data : prompts.map((prompt)=> ({
+            modelId : parsedSchema.data!.modelId,
+            prompt  : prompt.prompt,
+            userId  : USER_ID,
+            imageUrl : ""
+        }))
+    })
+
+    res.json({
+        imageId : images.map((image) => image.id)
+    })
+})
+
+app.get('/pack/bulk', async (req, res) =>{
+    const packs = prismaClient.packs.findMany({})
+    res.json(packs)
+})
+
+app.get('/images/bulk', async (req, res) =>{
+    const images = req.query.images as string [];
+    const limit = req.query.limit as string;
+    const offset  = req.query.offset as string;
+
+    const imageData = await prismaClient.outputImages.findMany({
+        where : {
+            id : {in : images},
+            userId : USER_ID
+        },
+        skip : parseInt(limit),
+        take : parseInt(offset)
+    })
+
+    res.json({
+        images : imageData
     })
 })
 
