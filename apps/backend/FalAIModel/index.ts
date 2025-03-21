@@ -1,7 +1,7 @@
 import { fal } from "@fal-ai/client";
 
 
-export class FalAIMode {
+export class FalAIModel {
     constructor () {};
 
     public async generateImage(prompt : string, tensorPath : string){
@@ -10,7 +10,7 @@ export class FalAIMode {
                 prompt : prompt,
                 loras  : [{ path : tensorPath, scale : 1 }]
             },
-            webhookUrl : "/othaenavaazhkadaithu"
+            webhookUrl : `${process.env.WEBHOOK_BASE_URL}/flux-ai/webhook/generate`
         })
         return {
             request_id,
@@ -24,7 +24,7 @@ export class FalAIMode {
               images_data_url: zipUrl,
               trigger_word   : triggerWord
             },
-            webhookUrl: `${process.env.WEBHOOK_BASE_URL}/flux-ai/train`,
+            webhookUrl: `${process.env.WEBHOOK_BASE_URL}/fal-ai/webhook/train`,
           });
           return {
             request_id,

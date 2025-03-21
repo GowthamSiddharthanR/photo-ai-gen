@@ -24,23 +24,27 @@ model Model {
     name           String
     userId         String
     type           ModelTypeEnum
+    triggerWord    String?
+    tensorPath     String?
     age            Int
     ethnicity      EhnicityTypeEnum
     eyeColor       EyeColorEnum
     bald           Boolean
-    trainindImages TraningImages[]
     outputImages   OutputImages[]
     createdAt      DateTime @default(now())
     updatedAt      DateTime @updatedAt
+    falAiRequestId  String?
+    zipUrl          String
+    status        MoelTraningStatusEnum @default(Pending)
 }
 
-model TraningImages {
-  id               String @id @default(uuid())
-  imageUrl         String //We are uploading list of images to s3 from frontend and then retrieving images from s3 as a link
-  //the reason why we are doing this is we cannot send that high mb/gb images to backend as it becomes slow.
-  modelId          String
-  model            Model   @relation(fields: [modelId], references: [id])
-}
+// model TraningImages {
+//   id               String @id @default(uuid())
+//   imageUrl         String //We are uploading list of images to s3 from frontend and then retrieving images from s3 as a link
+//   //the reason why we are doing this is we cannot send that high mb/gb images to backend as it becomes slow.
+//   modelId          String
+//   model            Model   @relation(fields: [modelId], references: [id])
+// }
 
 model OutputImages {
   id               String @id @default(uuid())
@@ -52,6 +56,7 @@ model OutputImages {
   userId           String
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
+  falAiRequestId   String?
 }  
 
 model Packs {
@@ -73,6 +78,11 @@ enum ModelTypeEnum {
   Other
 }
 
+enum MoelTraningStatusEnum {
+  Generated
+  Failed
+  Pending
+}
 
 enum OutputImagesEnum {
   Generated
