@@ -3,17 +3,12 @@ import React from "react";
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import { Nav } from "@/components/nav";
-import { Big_Shoulders_Stencil_Display } from 'next/font/google';
-
-// Configure the font
-const bigShouldersStencil = Big_Shoulders_Stencil_Display({
+import { Roboto_Mono } from 'next/font/google'
+ 
+export const roboto_mono = Roboto_Mono({
   subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  style: ['normal'],
   display: 'swap',
-  variable: '--font-big-shoulders-stencil',
-});
-
+})
 function Page() {
   useEffect(() => {
     const lenis = new Lenis();
@@ -31,8 +26,7 @@ function Page() {
   }, []);
 
   return (
-    <div className={`relative min-h-screen bg-black ${bigShouldersStencil.variable}`}>
-      {/* Background Video */}
+    <div className={`relative min-h-screen bg-black ${roboto_mono.className}`}>
       <video
         src="/vid/herobg.mp4"
         loop
@@ -40,17 +34,18 @@ function Page() {
         muted // Add muted to ensure autoplay works in most browsers
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
       />
-
-      {/* Content Layer */}
       <div className="relative z-10 text-white pt-5">
-        <Nav />
-        <div className="px-7 py-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, nam.
-          Similique voluptatibus voluptas assumenda? Odio asperiores facilis veritatis
-          vero non velit eum, provident eius incidunt amet doloribus cupiditate laborum
-          fuga!
+        <div className="flex justify-center fixed items-center w-full">
+          <Nav />
+        </div>
+        <div className=" mt-40   flex flex-col justify-center items-center ">
+          <div className="flex  flex-col w-[900px] justify-center items-center">
+            <div className="text-[170px]  bg-clip-text text-transparent bg-[rgb(215,254,3)]">navai</div>
+            <div className="text-white text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi accusamus quos neque facere! Nemo dolorem nobis sint hic debitis asperiores!</div>
+          </div>
         </div>
       </div>
+
     </div>
   );
 }
