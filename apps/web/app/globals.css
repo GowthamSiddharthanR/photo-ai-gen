@@ -1,9 +1,27 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@layer utilities {
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient {
+    animation: gradient 3s ease infinite;
+    background-size: 200% 200%;
+  }
+}
+
 /* @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&display=swap'); */
 
-/* @custom-variant dark (&:is(.dark *)); */
 
 /* * {
   font-family: "Big Shoulders Stencil", sans-serif;
@@ -11,6 +29,8 @@
   font-weight: 900;
   font-style: normal;
 } */
+ /* @custom-variant dark (&:is(.dark *)); */
+
 
 /* :root {
   --radius: 0.625rem;

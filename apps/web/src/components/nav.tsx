@@ -1,4 +1,4 @@
-const className = "w-[100px] mt-2.5 cursor-pointer h-[40px] text-center flex flex-col justify-center rounded-full hover:bg-[rgb(215,254,3)] hover:text-black transition-all duration-300 ease-in-out"
+const className = "w-[100px] mt-2.5 cursor-pointer h-[40px] text-center flex flex-col justify-center rounded-full hover:bg-black transition-all duration-300 ease-in-out"
 
 export const Nav = () => {
     return (
@@ -13,7 +13,7 @@ export const Nav = () => {
            <div className={className}>Pricing</div>
            {/* <div className={className}>Help Center</div> */}
            <div className="flex flex-col justify-center items-center">
-                <button className="rounded-full p-4 border border-[rgb(215,254,3)] hover:bg-[rgb(215,254,3)] hover:text-black transition-all duration-300 ease-in-out">
+                <button className="rounded-full cursor-pointer p-4 hover:-translate-y-1 hover:duration-700 border-white border-2 hover: bg-gradient-to-r from-black to-red-700 animate-gradient transition-all duration-300 ease-in-out">
                     Contact Sales
                 </button>
             </div>
