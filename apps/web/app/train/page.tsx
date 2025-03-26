@@ -52,7 +52,7 @@ function Page() {
         <div className="mt-16 flex flex-col  items-center ">
 
           <div className={`text-[250px] p-0 font-extrabold scale-y-125  bg-gradient-to-br from-red-700 to-black animate-gradient text-transparent bg-clip-text ${oswald.className}`}>
-            TOMORROW
+            NAVAI.IN
           </div>
 
           <div className="text-3xl">Transform words into breathtaking AI-generated visuals.</div>
