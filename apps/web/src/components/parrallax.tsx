@@ -8,12 +8,12 @@ import { useTransform,  useScroll } from "framer-motion"
 import { Column } from "@/components/Column";
 
 const images = [
-  "i1.webp",
-  "i2.webp",
-  "i3.webp",
-  "i4.webp",
-  "i5.webp",
-  "i6.webp",
+  "ai2.jpg",
+  "photo1.jpg",
+  "photo2.jpg",
+  "photo3.jpg",
+  "photo4.jpg",
+  "photo5.jpg",
   "i7.webp",
   "i8.webp",
   "i9.webp",
