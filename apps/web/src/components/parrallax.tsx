@@ -14,12 +14,12 @@ const images = [
   "photo3.jpg",
   "photo4.jpg",
   "photo5.jpg",
-  "i7.webp",
-  "i8.webp",
-  "i9.webp",
-  "i10.webp",
-  "i11.webp",
-  "i12.webp",
+  "ai8.jpg",
+  "ai3.jpg",
+  "ai4.jpg",
+  "ai5.jpg",
+  "ai6.jpg",
+  "ai8.jpg",
 ];
 
 export default function Parallax() {
