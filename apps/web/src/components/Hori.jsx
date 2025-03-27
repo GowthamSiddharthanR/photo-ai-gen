@@ -20,7 +20,7 @@ export default function Hori() {
         <div className="overflow-hidden relative w-full bg-black py-5">
           <motion.div
             className="flex space-x-16"
-            animate={{ x: ["0%", "-100%"] }}
+            animate={{ x: ["0%", "-121.5%"] }}
             transition={{
               repeat: Infinity,
               ease: "linear",
