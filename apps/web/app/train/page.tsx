@@ -11,6 +11,8 @@ import Parallax from "@/components/parrallax";
 import ImageBox from "@/components/ImageBox";
 import Works from "@/components/Works";
 import Footer from "@/components/footer";
+import Hori from "@/components/Hori";
+
 // import Spring from "@/components/spring";
 
 export const roboto_mono = Roboto_Mono({
@@ -68,6 +70,9 @@ function Page() {
           <Works />
         </div>
         <Parallax />
+      </div>
+      <div>
+        <Hori/>
       </div>
       <div>
         <Footer/>
