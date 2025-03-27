@@ -10,7 +10,8 @@ import MyButton from "@/components/ui/myButton";
 import Parallax from "@/components/parrallax";
 import ImageBox from "@/components/ImageBox";
 import Works from "@/components/Works";
-import Spring from "@/components/spring";
+import Footer from "@/components/footer";
+// import Spring from "@/components/spring";
 
 export const roboto_mono = Roboto_Mono({
   subsets: ['latin'],
@@ -52,7 +53,7 @@ function Page() {
         <div className="mt-16 flex flex-col  items-center ">
 
           <div className={`text-[250px] p-0 font-extrabold scale-y-125  bg-gradient-to-br from-red-700 to-black animate-gradient text-transparent bg-clip-text ${oswald.className}`}>
-            NAVAI.IN
+            TRANSFORM
           </div>
 
           <div className="text-3xl">Transform words into breathtaking AI-generated visuals.</div>
@@ -66,12 +67,11 @@ function Page() {
         <div className="my-20 px-10">
           <Works />
         </div>
-        <div className="w-[100vw] h-[100vh] bg-black"></div>
         <Parallax />
-        <div className="w-[100vw] h-[100vh] bg-black"></div>
-        <Spring/>
       </div>
-
+      <div>
+        <Footer/>
+      </div>
     </div>
   );
 }
